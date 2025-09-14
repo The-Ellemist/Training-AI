@@ -223,11 +223,12 @@ def main():
     # Train the network
     model = train_network()
     
-    # Play some games
-    print("\nPlaying games...")
-    for i in range(3):
-        play_game(model, ai_player=1)
-        print("\n" + "=" * 40)
+    # Show a quick demo game
+    print("\nShowing a quick demo game (AI vs Random):")
+    play_game_vs_random(model, ai_player=1)
+    
+    # Start interactive mode
+    play_interactive(model)
 
 if __name__ == "__main__":
     main()
