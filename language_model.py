@@ -213,7 +213,7 @@ if __name__ == "__main__":
     
     # STEP 1: Prepare the data
     print("\nStep 1: Preparing data...")
-    sequence_length = 10
+    sequence_length = 30
     inputs, targets, char_to_idx, idx_to_char, vocab_size = prepare_data(training_text, sequence_length)
     
     print(f"Example input: {inputs[0]} -> target: {targets[0]}")
@@ -227,7 +227,7 @@ if __name__ == "__main__":
     
     # STEP 3: Train the model
     print("\nStep 3: Training model...")
-    train_model(model, inputs, targets, epochs=300, learning_rate=0.01, batch_size=64)
+    train_model(model, inputs, targets, epochs=100, learning_rate=0.01, batch_size=64)
     
     # STEP 4: Generate some text
     print("\nStep 4: Generating text...")
