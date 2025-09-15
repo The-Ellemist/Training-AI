@@ -179,7 +179,7 @@ def generate_text(model, char_to_idx, idx_to_char, seed_text, length=100, temper
     
     for _ in range(length):
         # Take last sequence_length characters as input
-        input_seq = torch.tensor([current_seq[-10:]]).unsqueeze(0)
+        input_seq = torch.tensor([current_seq[-10:]])
         
         # Get model prediction
         with torch.no_grad():  # Don't calculate gradients during generation
