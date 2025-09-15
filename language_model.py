@@ -29,7 +29,7 @@ def prepare_data(text, sequence_length=10):
     char_to_idx = {ch: i for i, ch in enumerate(chars)}
     idx_to_char = {i: ch for ch, i in char_to_idx.items()}
     
-    print(f"Vocabulary: {chars}")
+    # print(f"Vocabulary: {chars}")
     print(f"Vocabulary size: {vocab_size}")
     
     # Convert entire text to numbers
