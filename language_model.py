@@ -209,14 +209,15 @@ def generate_text(model, char_to_idx, idx_to_char, seed_text, length=100, temper
 
 if __name__ == "__main__":
     # Our training text - the model will learn patterns from this
-    training_text = """
-    Hello world! This is a simple example of training a language model.
-    The model will learn to predict the next character in a sequence.
-    With enough training data and time, it can generate text that looks
-    similar to what it was trained on. Machine learning is amazing!
-    The quick brown fox jumps over the lazy dog. This sentence contains
-    every letter of the alphabet at least once.
-    """ * 5  # Repeat to have more training data
+    # training_text = """
+    # Hello world! This is a simple example of training a language model.
+    # The model will learn to predict the next character in a sequence.
+    # With enough training data and time, it can generate text that looks
+    # similar to what it was trained on. Machine learning is amazing!
+    # The quick brown fox jumps over the lazy dog. This sentence contains
+    # every letter of the alphabet at least once.
+    # """ * 5  # Repeat to have more training data
+    training_text = [line.strip() for line in open('input.txt', 'r')]
     
     print("=" * 60)
     print("SIMPLE LANGUAGE MODEL TUTORIAL")
