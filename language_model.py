@@ -308,7 +308,7 @@ if __name__ == "__main__":
     print("-" * 60)
     
     # Generate with different seeds and temperatures
-    seeds = ["The art of", "Machine learning", "Language models"]
+    seeds = ["The art of", "What do you want?", "Language models"]
     
     for seed in seeds:
         print(f"\nSeed: '{seed}'")
