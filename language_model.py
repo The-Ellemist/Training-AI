@@ -152,7 +152,7 @@ def train_model(model, inputs, targets, epochs=200, learning_rate=0.002, batch_s
             patience_counter += 1
         
         # Print progress more frequently
-        if epoch % 20 == 0 or patience_counter >= patience:
+        if epoch % 5 == 0 or patience_counter >= patience:
             current_lr = optimizer.param_groups[0]['lr']
             print(f"Epoch {epoch}/{epochs}, Loss: {avg_loss:.4f}, LR: {current_lr:.6f}")
             
