@@ -294,7 +294,7 @@ if __name__ == "__main__":
     
     # STEP 2: Create the improved model
     print("\nStep 2: Creating improved model...")
-    model = ImprovedLanguageModel(vocab_size, embedding_dim=64, hidden_dim=128, num_layers=2)
+    model = ImprovedLanguageModel(vocab_size, embedding_dim=32, hidden_dim=64, num_layers=3)
     
     total_params = sum(p.numel() for p in model.parameters())
     print(f"Model has {total_params:,} parameters")
