@@ -231,7 +231,7 @@ def generate_text(model, char_to_idx, idx_to_char, seed_text, length=200, temper
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("IMPROVED LANGUAGE MODEL TUTORIAL")
+    print("LANGUAGE MODEL TRAINING")
     print("=" * 60)
     
     # Load training text with error handling
@@ -294,14 +294,14 @@ if __name__ == "__main__":
     
     # STEP 2: Create the improved model
     print("\nStep 2: Creating improved model...")
-    model = ImprovedLanguageModel(vocab_size, embedding_dim=128, hidden_dim=256, num_layers=2)
+    model = ImprovedLanguageModel(vocab_size, embedding_dim=64, hidden_dim=128, num_layers=2)
     
     total_params = sum(p.numel() for p in model.parameters())
     print(f"Model has {total_params:,} parameters")
     
     # STEP 3: Train the model with better parameters
     print("\nStep 3: Training model...")
-    train_model(model, inputs, targets, epochs=300, learning_rate=0.002, batch_size=32)
+    train_model(model, inputs, targets, epochs=100, learning_rate=0.002, batch_size=32)
     
     # STEP 4: Generate some text
     print("\nStep 4: Generating text...")
@@ -331,5 +331,5 @@ if __name__ == "__main__":
             print(f"Generation failed: {e}")
     
     print("\n" + "=" * 60)
-    print("IMPROVED TUTORIAL COMPLETE!")
+    print("COMPLETE!")
     print("=" * 60)
