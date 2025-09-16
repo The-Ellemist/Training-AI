@@ -44,7 +44,7 @@ def prepare_data(text, sequence_length=20):  # Increased sequence length
     targets = []
     
     # Use sliding window approach for maximum data utilization
-    for i in range(int(len(data) / 100) - sequence_length):
+    for i in range(int(len(data) / 50) - sequence_length):
         inputs.append(data[i:i + sequence_length])
         targets.append(data[i + sequence_length])
     
@@ -294,14 +294,14 @@ if __name__ == "__main__":
     
     # STEP 2: Create the improved model
     print("\nStep 2: Creating improved model...")
-    model = ImprovedLanguageModel(vocab_size, embedding_dim=32, hidden_dim=64, num_layers=3)
+    model = ImprovedLanguageModel(vocab_size, embedding_dim=16, hidden_dim=32, num_layers=3)
     
     total_params = sum(p.numel() for p in model.parameters())
     print(f"Model has {total_params:,} parameters")
     
     # STEP 3: Train the model with better parameters
     print("\nStep 3: Training model...")
-    train_model(model, inputs, targets, epochs=20, learning_rate=0.002, batch_size=32)
+    train_model(model, inputs, targets, epochs=30, learning_rate=0.002, batch_size=32)
     
     # STEP 4: Generate some text
     print("\nStep 4: Generating text...")
