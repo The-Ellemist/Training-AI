@@ -301,7 +301,7 @@ if __name__ == "__main__":
     
     # STEP 3: Train the model with better parameters
     print("\nStep 3: Training model...")
-    train_model(model, inputs, targets, epochs=100, learning_rate=0.002, batch_size=32)
+    train_model(model, inputs, targets, epochs=10, learning_rate=0.002, batch_size=32)
     
     # STEP 4: Generate some text
     print("\nStep 4: Generating text...")
