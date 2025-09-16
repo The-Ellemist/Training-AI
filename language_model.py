@@ -44,7 +44,7 @@ def prepare_data(text, sequence_length=20):  # Increased sequence length
     targets = []
     
     # Use sliding window approach for maximum data utilization
-    for i in range(len(data / 10) - sequence_length):
+    for i in range(len(data) / 10 - sequence_length):
         inputs.append(data[i:i + sequence_length])
         targets.append(data[i + sequence_length])
     
