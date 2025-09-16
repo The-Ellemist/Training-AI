@@ -45,7 +45,7 @@ def prepare_data(text, sequence_length=10):
     targets = []
     
     # Limit the amount of training data to prevent memory issues
-    max_examples = min(100000, len(data) - sequence_length)  # Limit to 10k examples max
+    max_examples = min(10000, len(data) - sequence_length)  # Limit to 10k examples max
     
     for i in range(0, max_examples, 2):  # Skip every other example to reduce memory usage
         # Input: sequence of characters
@@ -213,7 +213,7 @@ if __name__ == "__main__":
     
     # STEP 1: Prepare the data
     print("\nStep 1: Preparing data...")
-    sequence_length = 30
+    sequence_length = 10
     inputs, targets, char_to_idx, idx_to_char, vocab_size = prepare_data(training_text, sequence_length)
     
     print(f"Example input: {inputs[0]} -> target: {targets[0]}")
@@ -227,7 +227,7 @@ if __name__ == "__main__":
     
     # STEP 3: Train the model
     print("\nStep 3: Training model...")
-    train_model(model, inputs, targets, epochs=40, learning_rate=0.01, batch_size=64)
+    train_model(model, inputs, targets, epochs=50, learning_rate=0.01, batch_size=64)
     
     # STEP 4: Generate some text
     print("\nStep 4: Generating text...")
