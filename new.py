@@ -159,9 +159,9 @@ class MazeEnvironment:
                 collision = True
                 # Push agent out
                 if abs(self.agent.vx) > abs(self.agent.vy):
-                    self.agent.x -= self.agent.vx
+                    self.agent.x -= self.agent.vx * 2
                 else:
-                    self.agent.y -= self.agent.vy
+                    self.agent.y -= self.agent.vy * 2
                 self.agent.stun()
                 break
         
@@ -313,7 +313,7 @@ class EvolutionaryTrainer:
             params[i] += mask * np.random.randn(*params[i].shape) * 0.5
         network.set_params(params)
     
-    def train(self, generations=50, visualize_best=True):
+    def train(self, generations=500, visualize_best=True):
         """Train the population"""
         env = MazeEnvironment()
         
