@@ -159,9 +159,9 @@ class MazeEnvironment:
                 collision = True
                 # Push agent out
                 if abs(self.agent.vx) > abs(self.agent.vy):
-                    self.agent.x -= self.agent.vx * 10
+                    self.agent.x -= self.agent.vx * 20
                 else:
-                    self.agent.y -= self.agent.vy * 10
+                    self.agent.y -= self.agent.vy * 20
                 self.agent.stun()
                 break
         
